@@ -2,16 +2,16 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: './src/main.js',
-  //entry: './src/lib/index.js', // 注释掉原有的
+  //entry: './src/main.js',
+  entry: './src/lib/index.js', // 注释掉原有的
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'build.js'
-    //filename: 'vue-better-scroll.js',
-    //library: 'VueBetterScroll',
-    //libraryTarget: 'umd',
-    //umdNamedDefine: true
+    //filename: 'build.js'
+    filename: 'vue-better-scroll.js',
+    library: 'VueBetterScroll',
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   module: {
     rules: [

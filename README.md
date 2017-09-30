@@ -2,17 +2,25 @@
 
 > A vue plugins based on better-scroll
 
-## Build Setup
+[Demo](http://note.youdao.com/)
 
-``` bash
-# install dependencies
-npm install
+> 暂未发布到npm，接下来几日会尽快更新文档，和发布到npm
 
-# serve with hot reload at localhost:8080
-npm run dev
+## how to use
 
-# build for production with minification
-npm run build
+```jvavascript
+ES6
+import vueBetterScroll from 'vue-better-scroll'
+
+//  通过require 导入
+var vueBetterScroll = require('vueBetterScroll')
+
+// 通过use挂载
+Vue.use(vueBetterScroll)
+
+// 或者直接导入js文件
+<script src="./dist/vue-better-scroll.js"></script>
+
 ```
 
 For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
