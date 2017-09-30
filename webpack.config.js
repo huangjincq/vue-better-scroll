@@ -5,9 +5,9 @@ module.exports = {
   entry: './src/main.js',
   //entry: './src/lib/index.js', // 注释掉原有的
   output: {
-    // path: path.resolve(__dirname, './dist'),
-    path: path.resolve(__dirname, './'),
-    publicPath: '/dist/',
+    path: path.resolve(__dirname, './dist'),
+    // publicPath: '/dist/',
+    publicPath: './',    // gh-pages
     filename: 'build.js'
     //filename: 'vue-better-scroll.js',
     //library: 'VueBetterScroll',
