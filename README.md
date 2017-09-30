@@ -2,7 +2,7 @@
 
 > A vue plugins based on better-scroll
 
-[Demo](http://note.youdao.com/)
+[Demo](https://huangjincq.github.io/vue-better-scroll/)
 
 > 暂未发布到npm，接下来几日会尽快更新文档，和发布到npm
 
