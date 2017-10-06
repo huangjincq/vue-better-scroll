@@ -123,7 +123,9 @@
       this.pullDownInitTop = -50
     },
     mounted () {
-      this.initScroll()
+      this.$nextTick(() => {
+        this.initScroll()
+      })
     },
     methods: {
       initScroll () {

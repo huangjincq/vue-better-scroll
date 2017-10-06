@@ -9,13 +9,13 @@
 ## how to use
 
 ```jvavascript
-ES6
+// import
 import vueBetterScroll from 'vue-better-scroll'
 
-//  通过require 导入
+// or require
 var vueBetterScroll = require('vueBetterScroll')
 
-// 通过use挂载
+// mount with global
 Vue.use(vueBetterScroll)
 
 // 或者直接导入js文件
