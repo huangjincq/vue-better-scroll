@@ -1,4 +1,4 @@
-# vue-better-scroll
+# vue-better-scroll [github](https://github.com/huangjincq/vue-better-scroll)
 
 > A vue plugins based on [better-scroll](https://github.com/ustbhuangyi/better-scroll)
 
@@ -174,21 +174,22 @@ refresh | 重新计算 better-scroll，当 DOM 结构发生变化的时候务必
 scrollTo | 滚动到指定的位置 | (scrollToX, scrollToY, scrollToTime, easing)接收4个参数，1.x横轴坐标(px) 2.y 纵轴坐标(px) 3.滚动动画执行的时长(ms) 4.easing 缓动函数，一般不建议修改
 scrollToElement | 滚动到指定的目标元素 | (el, time, offsetX , offsetY )接收4个参数 详情请查看: [scrollToElement](https://ustbhuangyi.github.io/better-scroll/doc/zh-hans/api.html#scrolltoelementel-time-offsetx-offsety-easing)
 destroy | 销毁 better-scroll，解绑事件
-==forceUpdate== | 数据跟新后强制更新页面 | (dirty)接收1个 boolean 类型的参数，如果参数为true，说明还可以触发下拉或者上拉事件，若参数为false表示之后不可拉动，一般用于数据加载全部了
+**forceUpdate** | 数据跟新后强制更新页面 | (dirty)接收1个 boolean 类型的参数，如果参数为true，说明还可以触发下拉或者上拉事件，若参数为false表示之后不可拉动，一般用于数据加载全部了
 
 ### Events:
 事件名称 | 说明 | 回调参数
 |---|---|---|
-scroll | 触发时机：滚动过程中，具体时机取决于选项中的 probeType (触发事件在参数中需要开启 ==listenScroll== ) | 共1个参数,类型Object, {x, y} 滚动的实时坐标
-beforeScrollStart | 触发时机：滚动开始之前 (触发事件在参数中需要开启 ==listenBeforeScroll== ) | 无
-pullingDown | 触发时机：在一次下拉刷新的动作后，这个时机一般用来去后端请求数据。(触发事件在参数中需要开启 ==pullDownRefresh== 相关配置 ) | 无
-pullingUp | 触发时机：在一次上拉加载的动作后，这个时机一般用来去后端请求数据。(触发事件在参数中需要开启 ==pullingUp== 相关配置 ) | 无
+scroll | 触发时机：滚动过程中，具体时机取决于选项中的 probeType (触发事件在参数中需要开启 **listenScroll** ) | 共1个参数,类型Object, {x, y} 滚动的实时坐标
+beforeScrollStart | 触发时机：滚动开始之前 (触发事件在参数中需要开启 **listenBeforeScroll** ) | 无
+pullingDown | 触发时机：在一次下拉刷新的动作后，这个时机一般用来去后端请求数据。(触发事件在参数中需要开启 **pullDownRefresh** 相关配置 ) | 无
+pullingUp | 触发时机：在一次上拉加载的动作后，这个时机一般用来去后端请求数据。(触发事件在参数中需要开启 **pullingUp** 相关配置 ) | 无
 
 
 ---
-> 目前只提供了以上常用方法,Api,如有额外需要请 issue
+> 目前只提供了以上常用方法、Api,如有额外需要请 issue
 
-# More detailed settings, please visit [better-scroll document](https://ustbhuangyi.github.io/better-scroll/doc/)
+# More detailed settings, please visit
+[better-scroll document](https://ustbhuangyi.github.io/better-scroll/doc/)
 
 # Author Blog
 
