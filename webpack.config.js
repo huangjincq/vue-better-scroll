@@ -9,7 +9,7 @@ module.exports = {
     publicPath: '/dist/',
     filename: 'build.js'
     //filename: 'vue-better-scroll.js',
-    //library: 'VueBetterScroll',
+    //library: 'vue2-better-scroll',
     //libraryTarget: 'umd',
     //umdNamedDefine: true
   },

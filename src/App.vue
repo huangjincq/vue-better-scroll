@@ -21,12 +21,12 @@
 </template>
 
 <script>
-  import vueBetterScroll from './lib'
+  import VueBetterScroll from './lib'
 
   let count = 1
   export default {
     name: 'app',
-    components: { vueBetterScroll },
+    components: { VueBetterScroll },
     data () {
       return {
         // 这个配置可以开启滚动条，默认为 false。当设置为 true 或者是一个 Object 的时候，都会开启滚动条，默认是会 fade 的

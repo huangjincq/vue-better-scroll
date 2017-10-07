@@ -1,15 +1,21 @@
 {
-  "name": "vue-better-scroll",
+  "name": "vue2-better-scroll",
   "description": "A vue plugins based on better-scroll",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "author": "huangjin <519730485@qq.com>",
   "private": false,
   "license": "MIT",
   "main": "dist/vue-better-scroll.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/huangjincq/vue-better-scroll"
+    "url": "https://github.com/huangjincq/vue-better-scroll.git"
   },
+  "keywords": [
+    "better-scroll",
+    "vue-better-scroll",
+    "vue2-better-scroll",
+    "scroll"
+  ],
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
