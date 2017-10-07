@@ -21,7 +21,7 @@
 </template>
 
 <script>
-  import VueBetterScroll from './lib'
+  import VueBetterScroll from '../dist/vue-better-scroll'
 
   let count = 1
   export default {
