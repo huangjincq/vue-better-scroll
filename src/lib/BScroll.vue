@@ -78,10 +78,6 @@
         type: null,
         default: false
       },
-      bottomAllLoaded: {
-        type: Boolean,
-        default: false
-      },
       startY: {
         type: Number,
         default: 0
@@ -123,7 +119,9 @@
       this.pullDownInitTop = -50
     },
     mounted () {
-      this.initScroll()
+      this.$nextTick(() => {
+        this.initScroll()
+      })
     },
     methods: {
       initScroll () {

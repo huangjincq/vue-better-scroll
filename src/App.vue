@@ -2,7 +2,7 @@
   <div id="app">
     <header>vue-better-scroll demo</header>
     <main class="position-box">
-      <b-scroll
+      <vue-better-scroll
           class="wrapper"
           ref="scroll"
           :scrollbar="scrollbarObj"
@@ -14,18 +14,19 @@
         <ul ref="list" class="list-content">
           <li class="list-item" v-for="item in items">{{item}}</li>
         </ul>
-      </b-scroll>
+      </vue-better-scroll>
     </main>
+    <button class="go-top" @click="scrollTo">返回顶部</button>
   </div>
 </template>
 
 <script>
-  import bScroll from './lib'
+  import vueBetterScroll from './lib'
 
   let count = 1
   export default {
     name: 'app',
-    components: { bScroll },
+    components: { vueBetterScroll },
     data () {
       return {
         // 这个配置可以开启滚动条，默认为 false。当设置为 true 或者是一个 Object 的时候，都会开启滚动条，默认是会 fade 的
@@ -47,19 +48,20 @@
         },
         startY: 0,  // 纵轴方向初始化位置
         scrollToX: 0,
-        scrollToY: -200,
+        scrollToY: 0,
         scrollToTime: 700,
-        items: [],
-        itemIndex: 0
+        items: []
       }
     },
     mounted () {
       this.onPullingDown()
     },
     methods: {
+      // 滚动到页面顶部
       scrollTo () {
         this.$refs.scroll.scrollTo(this.scrollToX, this.scrollToY, this.scrollToTime)
       },
+      // 模拟数据请求
       getData () {
         return new Promise(resolve => {
           setTimeout(() => {
@@ -73,7 +75,7 @@
       },
       onPullingDown () {
         // 模拟下拉刷新
-        console.log('pulling down and load data')
+        console.log('下拉刷新')
         count = 0
         this.getData().then(res => {
           this.items = res
@@ -81,7 +83,8 @@
         })
       },
       onPullingUp () {
-        // 更新数据
+        // 模拟上拉 加载更多数据
+        console.log('上拉加载')
         this.getData().then(res => {
           this.items = this.items.concat(res)
           if(count<50){
@@ -90,20 +93,6 @@
             this.$refs.scroll.forceUpdate(false)
           }
         })
-        /* setTimeout(() => {
-         if (Math.random() > 0.5) {
-         // 如果有新数据
-         const newPage = []
-         for (let i = 0; i < 10; i++) {
-         newPage.push('我是第' + ++this.itemIndex + '行')
-         }
-         this.items = this.items.concat(newPage)
-         this.$refs.scroll.forceUpdate(true)
-         } else {
-         // 如果没有新数据
-         this.$refs.scroll.forceUpdate(false)
-         }
-         }, 2000)*/
       }
     }
   }
@@ -163,5 +152,15 @@
     font-size: 18px;
     padding-left: 20px;
     border-bottom: 1px solid #e5e5e5;
+  }
+  .go-top{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: #009a61;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 10px 15px;
   }
 </style>
