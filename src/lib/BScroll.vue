@@ -78,10 +78,6 @@
         type: null,
         default: false
       },
-      bottomAllLoaded: {
-        type: Boolean,
-        default: false
-      },
       startY: {
         type: Number,
         default: 0
