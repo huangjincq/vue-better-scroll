@@ -179,16 +179,17 @@ destroy | 销毁 better-scroll，解绑事件
 ### Events:
 事件名称 | 说明 | 回调参数
 |---|---|---|
-scroll | 触发时机：滚动过程中，具体时机取决于选项中的 probeType (触发事件在参数中需要开启 ==listenScroll== ) | 共1个参数,类型Object, {x, y} 滚动的实时坐标
-beforeScrollStart | 触发时机：滚动开始之前 (触发事件在参数中需要开启 ==listenBeforeScroll== ) | 无
-pullingDown | 触发时机：在一次下拉刷新的动作后，这个时机一般用来去后端请求数据。(触发事件在参数中需要开启 ==pullDownRefresh== 相关配置 ) | 无
-pullingUp | 触发时机：在一次上拉加载的动作后，这个时机一般用来去后端请求数据。(触发事件在参数中需要开启 ==pullingUp== 相关配置 ) | 无
+scroll | 触发时机：滚动过程中，具体时机取决于选项中的 probeType (触发事件在参数中需要开启 **listenScroll** ) | 共1个参数,类型Object, {x, y} 滚动的实时坐标
+beforeScrollStart | 触发时机：滚动开始之前 (触发事件在参数中需要开启 **listenBeforeScroll** ) | 无
+pullingDown | 触发时机：在一次下拉刷新的动作后，这个时机一般用来去后端请求数据。(触发事件在参数中需要开启 **pullDownRefresh** 相关配置 ) | 无
+pullingUp | 触发时机：在一次上拉加载的动作后，这个时机一般用来去后端请求数据。(触发事件在参数中需要开启 **pullingUp** 相关配置 ) | 无
 
 
 ---
 > 目前只提供了以上常用方法,Api,如有额外需要请 issue
 
-# More detailed settings, please visit [better-scroll document](https://ustbhuangyi.github.io/better-scroll/doc/)
+# More detailed settings, please visit
+[better-scroll document](https://ustbhuangyi.github.io/better-scroll/doc/)
 
 # Author Blog
 
