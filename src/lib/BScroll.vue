@@ -219,7 +219,6 @@
       },
       _initPullUpLoad () {
         this.scroll.on('pullingUp', () => {
-          console.log('pullUpDirty=>', this.pullUpDirty)
           if (this.pullUpDirty) {
             this.isPullUpLoad = true
             this.$emit('pullingUp')
