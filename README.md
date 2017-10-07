@@ -1,4 +1,4 @@
-# vue-better-scroll [github](https://github.com/huangjincq/vue-better-scroll)
+# [vue-better-scroll](https://github.com/huangjincq/vue-better-scroll)
 
 > A vue plugins based on [better-scroll](https://github.com/ustbhuangyi/better-scroll)
 
