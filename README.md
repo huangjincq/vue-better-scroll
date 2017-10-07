@@ -2,7 +2,7 @@
 
 > A vue plugins based on [better-scroll](https://github.com/ustbhuangyi/better-scroll)
 
-> 最近写移动端项目下拉刷新，上拉加载的场景很常见，发现 [mint-ui](https://github.com/ElemeFE/mint-ui) 的 Loadmore 组件效果体验不尽如人意， [Vux](https://github.com/airyland/vux) 的 Scroller 组件作者不推荐使用也停止维护了，最后决定根据better-scroll封装成自己的vue组件，作者也提供了详细的教程。
+> 最近写移动端项目，下拉刷新、上拉加载的场景很常见，发现 [mint-ui](https://github.com/ElemeFE/mint-ui) 的 Loadmore 组件效果体验不尽如人意， [Vux](https://github.com/airyland/vux) 的 Scroller 组件作者不推荐使用也停止维护了，最后决定根据better-scroll封装成自己的vue组件，作者也提供了详细的教程。
 
 # Example
 [Demo Page](https://huangjincq.github.io/vue-better-scroll/)
@@ -18,7 +18,7 @@ npm install vue2-better-scroll -s
 
 ### Vue mount
 
-```jvavascript
+```javascript
 // import
 import Vue from 'vue'
 import VueBetterScroll from 'vue2-better-scroll'
