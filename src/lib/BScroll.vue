@@ -176,7 +176,7 @@
         this.scroll && this.scroll.scrollToElement.apply(this.scroll, arguments)
       },
       destroy () {
-        this.scroll.destroy()
+        this.scroll && this.scroll.destroy()
       },
       // 加载数据后更新
       forceUpdate (dirty) {
