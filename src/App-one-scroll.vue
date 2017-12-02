@@ -14,6 +14,7 @@
         <ul ref="list" class="list-content" style="min-height: 95vh">
           <li class="list-item" v-for="item in items">{{item}}</li>
         </ul>
+
       </vue-better-scroll>
     </main>
     <button class="go-top" @click="scrollTo">返回顶部</button>
