@@ -247,7 +247,7 @@
       }
     },
     destroyed () {
-      this.scroll.destroy()
+      this.scroll && this.scroll.destroy()
       this.scroll = null
       this.reboundPullDownTimer && clearTimeout(this.reboundPullDownTimer)
       this.reboundPullDownTimer = null

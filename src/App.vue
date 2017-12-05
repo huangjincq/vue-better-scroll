@@ -5,7 +5,7 @@
       <li @click="handletoggle(2)">tab2</li>
     </ul>
     <main class="position-box">
-      <div v-show="toggle===1" style="height: 100%">
+      <div v-if="toggle===1" style="height: 100%">
         <vue-better-scroll
             class="wrapper"
             ref="scroll1"
@@ -21,7 +21,7 @@
           </ul>
         </vue-better-scroll>
       </div>
-      <div v-show="toggle===2" style="height: 100%">
+      <div v-if="toggle===2" style="height: 100%">
         <vue-better-scroll
             class="wrapper"
             ref="scroll2"
@@ -77,8 +77,8 @@
       }
     },
     mounted () {
-      this.onPullingDown()
-      this.onPullingDown2()
+      //this.onPullingDown()
+      //this.onPullingDown2()
     },
     methods: {
       // 滚动到页面顶部
@@ -87,10 +87,18 @@
       },
       handletoggle(val){
         this.toggle = val
-        this.$nextTick(()=>{
-          this.$refs.scroll1.refresh()
-          this.$refs.scroll2.refresh()
-        })
+        if(val==1){
+          this.onPullingDown()
+          this.$nextTick(()=>{
+            this.$refs.scroll1.refresh()
+          })
+        }else{
+          this.onPullingDown2()
+          this.$nextTick(()=>{
+            this.$refs.scroll2.refresh()
+          })
+        }
+
       },
       // 模拟数据请求
       getData () {
