@@ -193,4 +193,4 @@ pullingUp | 触发时机：在一次上拉加载的动作后，这个时机一�
 
 # Author Blog
 
-[Gold_Gold](http://www.jianshu.com/u/ea610390a272)
+[Gold_Gold](https://juejin.im/user/5972b4386fb9a06bb5406eac)
