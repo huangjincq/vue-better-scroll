@@ -1,7 +1,7 @@
 {
   "name": "vue2-better-scroll",
   "description": "A vue plugins based on better-scroll",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "author": "huangjin <519730485@qq.com>",
   "private": false,
   "license": "MIT",
@@ -21,7 +21,7 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
-    "better-scroll": "^1.5.4",
+    "better-scroll": "^1.9.0",
     "vue": "^2.5.9"
   },
   "devDependencies": {
