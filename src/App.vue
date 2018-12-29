@@ -67,7 +67,7 @@
         return new Promise(resolve => {
           setTimeout(() => {
             const arr = []
-            for (let i = 0; i < 5; i++) {
+            for (let i = 0; i < 10; i++) {
               arr.push(count++)
             }
             resolve(arr)
@@ -88,7 +88,7 @@
         console.log('上拉加载')
         this.getData().then(res => {
           this.items = this.items.concat(res)
-          if(count<50){
+          if(count<30){
             this.$refs.scroll.forceUpdate(true)
           }else{
             this.$refs.scroll.forceUpdate(false)
