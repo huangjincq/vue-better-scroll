@@ -133,8 +133,8 @@
       this.pullDownInitTop = -50
     },
     mounted() {
-      const minHeight = this.$refs.wrapper.offsetHeight
-      this.$refs.wrapper.firstElementChild.firstElementChild.style.minHeight = minHeight + 'px'
+      const thisWrapper = this.$refs.wrapper
+      thisWrapper.firstElementChild.firstElementChild.style.minHeight = thisWrapper.offsetHeight + 'px'
       this.$nextTick(() => {
         this.initScroll()
       })
