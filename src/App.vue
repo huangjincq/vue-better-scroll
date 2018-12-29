@@ -11,10 +11,9 @@
         :startY="parseInt(startY)"
         @pullingDown="onPullingDown"
         @pullingUp="onPullingUp">
-        <ul ref="list" class="list-content" style="min-height: 95vh">
+        <ul class="list-content">
           <li class="list-item" v-for="item in items">{{item}}</li>
         </ul>
-
       </vue-better-scroll>
     </main>
     <button class="go-top" @click="scrollTo">返回顶部</button>
@@ -22,8 +21,8 @@
 </template>
 
 <script>
-  import VueBetterScroll from '../dist/vue-better-scroll'
-  // import VueBetterScroll from './lib'
+  // import VueBetterScroll from '../dist/vue-better-scroll'
+  import VueBetterScroll from './lib'
 
   let count = 1
   export default {
@@ -68,7 +67,7 @@
         return new Promise(resolve => {
           setTimeout(() => {
             const arr = []
-            for (let i = 0; i < 20; i++) {
+            for (let i = 0; i < 5; i++) {
               arr.push(count++)
             }
             resolve(arr)
@@ -139,10 +138,6 @@
     bottom: 0;
   }
 
-  .wrapper {
-    height:100%;
-    overflow: hidden;
-  }
 
   .list-content {
     list-style: none;

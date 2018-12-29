@@ -7,6 +7,14 @@
 # Example
 [Demo Page](https://huangjincq.github.io/vue-better-scroll/)
 
+# 滚动原理
+
+由于 better-scroll 的滚动原理为：在滚动方向上，第一个子元素的长度超过了容器的长度。
+
+那么对于 Scroll 组件，其实就是内容元素 .list-content 在滚动方向上的长度必须大于容器元素 .wrapper。
+
+任何时候如果出现无法滚动的情况，都应该首先查看内容元素 .list-content 的元素高度/宽度是否大于容器元素 .wrapper 的高度/宽度。这是内容能够滚动的前提条件。如果内容存在图片的情况，可能会出现 DOM 元素渲染时图片还未下载，因此内容元素的高度小于预期，出现滚动不正常的情况。此时你应该在图片加载完成后，比如 onload 事件回调中，手动调用 vue-better-scroll 组件的 refresh() 方法，它会重新计算滚动距离。
+
 # Use Setup
 
 ### Install vue2-better-scroll
