@@ -103,6 +103,12 @@
       freeScroll: {
         type: Boolean,
         default: false
+      },
+      options: {
+        type: Object,
+        default: function () {
+          return { }
+        }
       }
     },
     data() {
@@ -144,7 +150,7 @@
         if (!this.$refs.wrapper) {
           return
         }
-        const options = {
+        const options = Object.assign(this.options,{
           probeType: this.probeType,
           click: this.click,
           scrollY: this.freeScroll || this.direction === DIRECTION_V,
@@ -154,7 +160,7 @@
           pullUpLoad: this.pullUpLoad,
           startY: this.startY,
           freeScroll: this.freeScroll
-        }
+        })
         this.scroll = new BScroll(this.$refs.wrapper, options)
         if (this.listenScroll) {
           this.scroll.on('scroll', pos => {
