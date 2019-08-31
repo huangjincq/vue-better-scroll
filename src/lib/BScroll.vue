@@ -54,9 +54,6 @@
   import BScroll from 'better-scroll'
   import Bubble from './Bubble.vue'
 
-  const DIRECTION_H = 'horizontal'
-  const DIRECTION_V = 'vertical'
-
   export default {
     name: 'vue-better-scroll',
     props: {
@@ -75,10 +72,6 @@
       listenBeforeScroll: {
         type: Boolean,
         default: false
-      },
-      direction: {
-        type: String,
-        default: DIRECTION_V
       },
       scrollbar: {
         type: null,
@@ -106,11 +99,12 @@
       },
       options: {
         type: Object,
-        default: function () {
-          return { }
+        default: () => {
+          return {}
         }
       }
     },
+    components: { Bubble },
     data() {
       return {
         beforePullDown: true,
@@ -150,11 +144,11 @@
         if (!this.$refs.wrapper) {
           return
         }
-        const options = Object.assign(this.options,{
+        const options = Object.assign({}, this.options, {
           probeType: this.probeType,
           click: this.click,
-          scrollY: this.freeScroll || this.direction === DIRECTION_V,
-          scrollX: this.freeScroll || this.direction === DIRECTION_H,
+          scrollY: true, // 下拉刷新组件 只能纵向 不能横向
+          scrollX: false,
           scrollbar: this.scrollbar,
           pullDownRefresh: this.pullDownRefresh,
           pullUpLoad: this.pullUpLoad,
@@ -170,7 +164,7 @@
 
         if (this.listenBeforeScroll) {
           this.scroll.on('beforeScrollStart', () => {
-            this.$emit('beforeScrollStart')
+            this.$emit('before-scroll-start')
           })
         }
 
@@ -223,7 +217,7 @@
           this.beforePullDown = false
           this.isPullingDown = true
           this.pulling = true
-          this.$emit('pullingDown')
+          this.$emit('pulling-down')
         })
 
         this.scroll.on('scroll', pos => {
@@ -244,7 +238,7 @@
           console.log(11111)
           if (this.pullUpDirty) {
             this.isPullUpLoad = true
-            this.$emit('pullingUp')
+            this.$emit('pulling-up')
           }
         })
       },
@@ -276,9 +270,6 @@
       this.reboundPullDownTimer = null
       this.afterPullDownTimer && clearTimeout(this.afterPullDownTimer)
       this.afterPullDownTimer = null
-    },
-    components: {
-      Bubble
     }
   }
 </script>
@@ -286,6 +277,7 @@
 <style>
   .scroll-wrapper {
     height: 100%;
+    width: 100%;
     overflow: hidden;
   }
 

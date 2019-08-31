@@ -8,8 +8,8 @@
                          :pullDownRefresh="pullDownRefreshObj"
                          :pullUpLoad="pullUpLoadObj"
                          :startY="parseInt(startY)"
-                         @pullingDown="onPullingDown"
-                         @pullingUp="onPullingUp">
+                         @pulling-down="onPullingDown"
+                         @pulling-up="onPullingUp">
         <ul class="list-content">
           <li class="list-item"
               v-for="item in items">{{item}}</li>
@@ -22,8 +22,8 @@
 </template>
 
 <script>
-  // import VueBetterScroll from '../dist/vue-better-scroll'
-  import VueBetterScroll from './lib'
+  import VueBetterScroll from '../dist/vue-better-scroll'
+  // import VueBetterScroll from './lib'
 
   let count = 1
   export default {
@@ -38,14 +38,15 @@
         // 这个配置用于做下拉刷新功能，默认为 false。当设置为 true 或者是一个 Object 的时候，可以开启下拉刷新，可以配置顶部下拉的距离（threshold） 来决定刷新时机以及回弹停留的距离（stop）
         pullDownRefreshObj: {
           threshold: 90,
-          stop: 40
+          stop: 40,
+          txt: '刷新了哈'
         },
         // 这个配置用于做上拉加载功能，默认为 false。当设置为 true 或者是一个 Object 的时候，可以开启上拉加载，可以配置离底部距离阈值（threshold）来决定开始加载的时机
         pullUpLoadObj: {
           threshold: 0,
           txt: {
-            more: '加载更多',
-            noMore: '没有更多数据了'
+            more: '加载更多...',
+            noMore: '没有更多数据啦'
           }
         },
         startY: 0, // 纵轴方向初始化位置

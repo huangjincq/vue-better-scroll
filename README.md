@@ -65,8 +65,8 @@ export default {
                          :pullDownRefresh="pullDownRefreshObj"
                          :pullUpLoad="pullUpLoadObj"
                          :startY="parseInt(startY)"
-                         @pullingDown="onPullingDown"
-                         @pullingUp="onPullingUp">
+                         @pulling-down="onPullingDown"
+                         @pullin-up="onPullingUp">
         <ul class="list-content">
           <li class="list-item"
               v-for="item in items">{{item}}</li>
@@ -176,13 +176,13 @@ export default {
 probeType | 派发scroll事件的条件 | Number | 1、2、3 | 1 |
 click | better-scroll 会派发一个 click 事件 | Boolean |  | true
 listenScroll | 是否监听滚动，开启后才能派发scroll事件| Boolean |  | false
-listenBeforeScroll | 是否监听滚动之前，开启后才能派发beforeScrollStart事件| Boolean |  | false
-direction | 滚动方向| String | horizontal、vertical | vertical
+listenBeforeScroll | 是否监听滚动之前，开启后才能派发before-scroll-start事件| Boolean |  | false
 scrollbar | 这个配置可以开启滚动条。当设置为 true 或者是一个 Object 的时候，都会开启滚动条，默认是会 fade 的 | Boolean or Object | {fade: true},  | false
 pullDownRefresh | 这个配置用于做下拉刷新功能。当设置为 true 或者是一个 Object 的时候，可以开启下拉刷新，可以配置顶部下拉的距离（threshold） 来决定刷新时机以及回弹停留的距离（stop）| Boolean or Object | {threshold: 90,stop: 40}, | false
 pullUpLoad | 这个配置用于做上拉加载功能。当设置为 true 或者是一个 Object 的时候，可以开启上拉加载，可以配置离底部距离阈值（threshold）来决定开始加载的时机| Boolean or Object | { threshold: 0, txt: { more: '加载更多',noMore:'没有更多数据了'} } | false
 startY | 纵轴方向初始化位置 | Number |  | 0
 freeScroll | 有些场景我们需要支持横向和纵向同时滚动，而不仅限制在某个方向，这个时候我们只要设置 freeScroll 为 true 即可 | Boolean |  | false
+options | 可自行根据 better-scroll 官方文档 扩展参数 例：`:options="{stopPropagation:true}"` | Object | 官方文档的所有参数（注：props传入的相同的属性会覆盖options传入的） | {}
 
 ### Slots:
 
@@ -208,9 +208,9 @@ destroy | 销毁 better-scroll，解绑事件
 事件名称 | 说明 | 回调参数
 |---|---|---|
 scroll | 触发时机：滚动过程中，具体时机取决于选项中的 probeType (触发事件在参数中需要开启 **listenScroll** ) | 共1个参数,类型Object, {x, y} 滚动的实时坐标
-beforeScrollStart | 触发时机：滚动开始之前 (触发事件在参数中需要开启 **listenBeforeScroll** ) | 无
-pullingDown | 触发时机：在一次下拉刷新的动作后，这个时机一般用来去后端请求数据。(触发事件在参数中需要开启 **pullDownRefresh** 相关配置 ) | 无
-pullingUp | 触发时机：在一次上拉加载的动作后，这个时机一般用来去后端请求数据。(触发事件在参数中需要开启 **pullingUp** 相关配置 ) | 无
+before-scroll-start | 触发时机：滚动开始之前 (触发事件在参数中需要开启 **listenBeforeScroll** ) | 无
+pulling-down | 触发时机：在一次下拉刷新的动作后，这个时机一般用来去后端请求数据。(触发事件在参数中需要开启 **pullDownRefresh** 相关配置 ) | 无
+pullin-up | 触发时机：在一次上拉加载的动作后，这个时机一般用来去后端请求数据。(触发事件在参数中需要开启 **pullingUp** 相关配置 ) | 无
 
 
 ---
