@@ -1,7 +1,7 @@
 {
   "name": "vue2-better-scroll",
   "description": "A vue plugins based on better-scroll",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "huangjin <519730485@qq.com>",
   "private": false,
   "license": "MIT",

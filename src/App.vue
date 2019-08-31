@@ -22,8 +22,8 @@
 </template>
 
 <script>
-  import VueBetterScroll from '../dist/vue-better-scroll'
-  // import VueBetterScroll from './lib'
+  // import VueBetterScroll from '../dist/vue-better-scroll'
+  import VueBetterScroll from './lib'
 
   let count = 1
   export default {
@@ -69,7 +69,7 @@
         return new Promise(resolve => {
           setTimeout(() => {
             const arr = []
-            for (let i = 0; i < 10; i++) {
+            for (let i = 0; i < 15; i++) {
               arr.push(count++)
             }
             resolve(arr)
@@ -90,7 +90,7 @@
         console.log('上拉加载')
         this.getData().then(res => {
           this.items = this.items.concat(res)
-          if (count < 30) {
+          if (count < 40) {
             this.$refs.scroll.forceUpdate(true)
           } else {
             this.$refs.scroll.forceUpdate(false)
