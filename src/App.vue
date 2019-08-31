@@ -2,32 +2,34 @@
   <div id="app">
     <header>vue-better-scroll demo</header>
     <main class="position-box">
-      <vue-better-scroll
-          class="wrapper"
-          ref="scroll"
-          :scrollbar="scrollbarObj"
-          :pullDownRefresh="pullDownRefreshObj"
-          :pullUpLoad="pullUpLoadObj"
-          :startY="parseInt(startY)"
-          @pullingDown="onPullingDown"
-          @pullingUp="onPullingUp">
-        <ul ref="list" class="list-content">
-          <li class="list-item" v-for="item in items">{{item}}</li>
+      <vue-better-scroll class="wrapper"
+                         ref="scroll"
+                         :scrollbar="scrollbarObj"
+                         :pullDownRefresh="pullDownRefreshObj"
+                         :pullUpLoad="pullUpLoadObj"
+                         :startY="parseInt(startY)"
+                         @pulling-down="onPullingDown"
+                         @pulling-up="onPullingUp">
+        <ul class="list-content">
+          <li class="list-item"
+              v-for="item in items">{{item}}</li>
         </ul>
       </vue-better-scroll>
     </main>
-    <button class="go-top" @click="scrollTo">返回顶部</button>
+    <button class="go-top"
+            @click="scrollTo">返回顶部</button>
   </div>
 </template>
 
 <script>
-  import VueBetterScroll from './lib'
+  import VueBetterScroll from '../dist/vue-better-scroll'
+  // import VueBetterScroll from './lib'
 
   let count = 1
   export default {
     name: 'app',
     components: { VueBetterScroll },
-    data () {
+    data() {
       return {
         // 这个配置可以开启滚动条，默认为 false。当设置为 true 或者是一个 Object 的时候，都会开启滚动条，默认是会 fade 的
         scrollbarObj: {
@@ -36,44 +38,45 @@
         // 这个配置用于做下拉刷新功能，默认为 false。当设置为 true 或者是一个 Object 的时候，可以开启下拉刷新，可以配置顶部下拉的距离（threshold） 来决定刷新时机以及回弹停留的距离（stop）
         pullDownRefreshObj: {
           threshold: 90,
-          stop: 40
+          stop: 40,
+          txt: '刷新了哈'
         },
         // 这个配置用于做上拉加载功能，默认为 false。当设置为 true 或者是一个 Object 的时候，可以开启上拉加载，可以配置离底部距离阈值（threshold）来决定开始加载的时机
         pullUpLoadObj: {
           threshold: 0,
           txt: {
-            more: '加载更多',
-            noMore: '没有更多数据了'
+            more: '加载更多...',
+            noMore: '没有更多数据啦'
           }
         },
-        startY: 0,  // 纵轴方向初始化位置
+        startY: 0, // 纵轴方向初始化位置
         scrollToX: 0,
         scrollToY: 0,
         scrollToTime: 700,
         items: []
       }
     },
-    mounted () {
+    mounted() {
       this.onPullingDown()
     },
     methods: {
       // 滚动到页面顶部
-      scrollTo () {
+      scrollTo() {
         this.$refs.scroll.scrollTo(this.scrollToX, this.scrollToY, this.scrollToTime)
       },
       // 模拟数据请求
-      getData () {
+      getData() {
         return new Promise(resolve => {
           setTimeout(() => {
             const arr = []
-            for (let i = 0; i < 20; i++) {
+            for (let i = 0; i < 10; i++) {
               arr.push(count++)
             }
             resolve(arr)
           }, 1000)
         })
       },
-      onPullingDown () {
+      onPullingDown() {
         // 模拟下拉刷新
         console.log('下拉刷新')
         count = 0
@@ -82,14 +85,14 @@
           this.$refs.scroll.forceUpdate(true)
         })
       },
-      onPullingUp () {
+      onPullingUp() {
         // 模拟上拉 加载更多数据
         console.log('上拉加载')
         this.getData().then(res => {
           this.items = this.items.concat(res)
-          if(count<50){
+          if (count < 30) {
             this.$refs.scroll.forceUpdate(true)
-          }else{
+          } else {
             this.$refs.scroll.forceUpdate(false)
           }
         })
@@ -104,7 +107,8 @@
     margin: 0;
   }
 
-  body, html {
+  body,
+  html {
     height: 100%;
     overflow: hidden;
   }
@@ -137,10 +141,6 @@
     bottom: 0;
   }
 
-  .wrapper {
-    height: 100%
-  }
-
   .list-content {
     list-style: none;
     background: #fff;
@@ -153,7 +153,7 @@
     padding-left: 20px;
     border-bottom: 1px solid #e5e5e5;
   }
-  .go-top{
+  .go-top {
     position: fixed;
     right: 20px;
     bottom: 20px;
