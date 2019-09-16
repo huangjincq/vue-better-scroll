@@ -66,7 +66,7 @@ export default {
                          :pullUpLoad="pullUpLoadObj"
                          :startY="parseInt(startY)"
                          @pulling-down="onPullingDown"
-                         @pullin-up="onPullingUp">
+                         @pulling-up="onPullingUp">
         <ul class="list-content">
           <li class="list-item"
               v-for="item in items">{{item}}</li>
