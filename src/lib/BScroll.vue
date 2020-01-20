@@ -273,7 +273,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .scroll-wrapper {
     height: 100%;
     width: 100%;
