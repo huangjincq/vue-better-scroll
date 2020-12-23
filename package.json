@@ -21,8 +21,10 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
-    "better-scroll": "^1.15.2",
-    "vue": "^2.6.10"
+    "better-scroll": "^1.15.2"
+  },
+  "peerDependencies": {
+    "vue": ">=2.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
@@ -31,6 +33,7 @@
     "cross-env": "^3.0.0",
     "css-loader": "^0.25.0",
     "file-loader": "^0.9.0",
+    "vue": "^2.6.12",
     "vue-loader": "^12.1.0",
     "vue-template-compiler": "^2.6.10",
     "webpack": "3.6.0",
