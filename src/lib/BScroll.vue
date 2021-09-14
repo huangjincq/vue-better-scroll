@@ -133,9 +133,9 @@
       this.pullDownInitTop = -50
     },
     mounted() {
-      const thisWrapper = this.$refs.wrapper
-      thisWrapper.firstElementChild.firstElementChild.style.minHeight = thisWrapper.offsetHeight + 'px'
       this.$nextTick(() => {
+        const thisWrapper = this.$refs.wrapper
+        thisWrapper.firstElementChild.firstElementChild.style.minHeight = thisWrapper.offsetHeight + 'px'
         this.initScroll()
       })
     },
