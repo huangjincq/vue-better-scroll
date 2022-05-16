@@ -5,7 +5,7 @@
   "author": "huangjin <519730485@qq.com>",
   "private": false,
   "license": "MIT",
-  "main": "dist/vue-better-scroll.js",
+  "main": "dist/vue2-better-scroll.umd.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/huangjincq/vue-better-scroll.git"
