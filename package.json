@@ -20,7 +20,9 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lib": "vue-cli-service build --target lib --name vue2-better-scroll --dest lib src/package/index.js",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "predeploy": "vue-cli-service build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "better-scroll": "^2.4.2",
@@ -37,6 +39,7 @@
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
+    "gh-pages": "^4.0.0",
     "vue": "^2.6.14",
     "vue-template-compiler": "^2.6.14"
   },
