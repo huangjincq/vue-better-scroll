@@ -19,7 +19,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lib": "vue-cli-service build --target lib --name vue2-better-scroll --dest lib src/lib/index.js",
+    "lib": "vue-cli-service build --target lib --name vue2-better-scroll --dest lib src/package/index.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

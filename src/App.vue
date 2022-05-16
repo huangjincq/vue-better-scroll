@@ -23,7 +23,7 @@
 
 <script>
 // import VueBetterScroll from '../dist/vue-better-scroll'
-import VueBetterScroll from './lib'
+import VueBetterScroll from './package/index'
 
 let count = 1
 export default {
