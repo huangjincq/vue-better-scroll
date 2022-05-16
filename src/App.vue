@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <header>vue-better-scroll demo</header>
+    <header>vue-better-scroll 2.0 demo</header>
     <main class="position-box">
       <vue-better-scroll
         class="wrapper"
