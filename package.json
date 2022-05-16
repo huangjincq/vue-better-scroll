@@ -1,11 +1,11 @@
 {
   "name": "vue2-better-scroll",
   "description": "A vue plugins based on better-scroll",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "huangjin <519730485@qq.com>",
   "private": false,
   "license": "MIT",
-  "main": "dist/vue2-better-scroll.umd.js",
+  "main": "lib/vue2-better-scroll.umd.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/huangjincq/vue-better-scroll.git"
@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "better-scroll": "^2.4.2",
-    "core-js": "^3.8.3"
+    "core-js": "^3.8.3",
   },
   "peerDependencies": {
     "vue": ">=2.0.0"
