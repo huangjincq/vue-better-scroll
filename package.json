@@ -17,26 +17,46 @@
     "scroll"
   ],
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lib": "vue-cli-service build --target lib --name vue2-better-scroll --dest lib src/lib/index.js",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "better-scroll": "^1.15.2"
+    "better-scroll": "^1.15.2",
+    "core-js": "^3.8.3"
   },
   "peerDependencies": {
     "vue": ">=2.0.0"
   },
   "devDependencies": {
-    "babel-core": "^6.0.0",
-    "babel-loader": "^6.0.0",
-    "babel-preset-env": "^1.5.1",
-    "cross-env": "^3.0.0",
-    "css-loader": "^0.25.0",
-    "file-loader": "^0.9.0",
-    "vue": "^2.6.12",
-    "vue-loader": "^12.1.0",
-    "vue-template-compiler": "^2.6.10",
-    "webpack": "3.6.0",
-    "webpack-dev-server": "2.9.1"
-  }
+    "vue": "^2.6.14",
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "vue-template-compiler": "^2.6.14"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "@babel/eslint-parser"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }
