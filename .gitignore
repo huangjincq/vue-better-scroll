@@ -4,6 +4,8 @@ node_modules/
 npm-debug.log
 yarn-error.log
 
+/dist
+
 
 # Editor directories and files
 .idea
